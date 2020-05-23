@@ -99,7 +99,7 @@ func _on_Timer_timeout():
 	if byproducts[\"total\"] >= 120:
 		_timer.stop()
 		#_reset_timer.start()
-		print(byproducts)
+		#print(byproducts)
 
 func get_energy():
 	total_energy = 0
@@ -125,13 +125,12 @@ func set_energy_and_waste():
 	$EnergyDisplay/kilojoules.text = str(total_energy) + \" kJ\"
 			
 func update_byproduct_labels():
-	$ByproductKey/CO2.text = \"CO2: \" + str(byproducts[\"carbondioxide\"]) + \" moles\"
-	$ByproductKey/CO.text = \"CO: \" + str(byproducts[\"carbonmonoxide\"] * 2) + \" moles\"
-	$ByproductKey/H2O.text = \"H2O: \" + str(byproducts[\"water\"] * 2) + \" moles\"
-	$ByproductKey/SO.text = \"SO: \" + str(byproducts[\"sulfurdioxide\"]) + \" moles\"
+	$ByproductKey/CO2.text = \"Carbon Dioxide: \" + str(byproducts[\"carbondioxide\"]) + \" moles\"
+	$ByproductKey/CO.text = \"Carbon Monoxide: \" + str(byproducts[\"carbonmonoxide\"] * 2) + \" moles\"
+	$ByproductKey/H2O.text = \"Water: \" + str(byproducts[\"water\"] * 2) + \" moles\"
+	$ByproductKey/SO.text = \"Sulfur Dioxide: \" + str(byproducts[\"sulfurdioxide\"]) + \" moles\"
 
 func _reset_simulation():
-	print(\"RESET\")
 	for node in get_children():
 		if node is KinematicBody2D:
 			node.queue_free()
@@ -261,15 +260,14 @@ scale = Vector2( 1.29195, 1.28242 )
 texture = ExtResource( 4 )
 
 [node name="ReactantKey" type="Node2D" parent="."]
-editor/display_folded = true
 z_index = 2
 
 [node name="Carbon" type="Label" parent="ReactantKey"]
 anchor_right = 1.0
-margin_left = 989.315
-margin_top = 14.9277
-margin_right = 1147.32
-margin_bottom = 60.9277
+margin_left = 823.513
+margin_top = 12.5073
+margin_right = 981.513
+margin_bottom = 58.5073
 custom_fonts/font = SubResource( 5 )
 text = "Carbon"
 
@@ -280,10 +278,10 @@ texture = ExtResource( 5 )
 
 [node name="Oxygen" type="Label" parent="ReactantKey"]
 anchor_right = 1.0
-margin_left = 987.964
-margin_top = 62.6578
-margin_right = 1145.96
-margin_bottom = 108.658
+margin_left = 822.162
+margin_top = 60.2374
+margin_right = 980.162
+margin_bottom = 106.237
 custom_fonts/font = SubResource( 5 )
 text = "Oxygen"
 
@@ -294,10 +292,10 @@ texture = ExtResource( 6 )
 
 [node name="Hydrogen" type="Label" parent="ReactantKey"]
 anchor_right = 1.0
-margin_left = 988.802
-margin_top = 115.96
-margin_right = 1173.8
-margin_bottom = 161.96
+margin_left = 823.001
+margin_top = 113.539
+margin_right = 1008.0
+margin_bottom = 159.539
 custom_fonts/font = SubResource( 5 )
 text = "Hydrogen"
 
@@ -308,10 +306,10 @@ texture = ExtResource( 7 )
 
 [node name="Sulfur" type="Label" parent="ReactantKey"]
 anchor_right = 1.0
-margin_left = 990.58
-margin_top = 169.939
-margin_right = 1148.58
-margin_bottom = 215.939
+margin_left = 824.778
+margin_top = 167.518
+margin_right = 982.778
+margin_bottom = 213.518
 custom_fonts/font = SubResource( 5 )
 text = "Sulfur"
 
