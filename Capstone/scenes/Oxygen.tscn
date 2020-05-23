@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/Particle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/Oxygen.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 10.6617
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 9.3819
+
+[node name="Oxygen" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="." index="2"]
+position = Vector2( 7.0355, -0.0456848 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" index="1"]
+position = Vector2( -13.8426, 0.0456848 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+position = Vector2( -6.80707, 0 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="4"]
+position = Vector2( 7.30961, -0.0456848 )
+shape = SubResource( 2 )
